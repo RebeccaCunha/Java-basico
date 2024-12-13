@@ -100,13 +100,13 @@ public class TelaIdade extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void btnCalActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // 
+       
         int ano = Integer.parseInt(txtAno.getText());
         int idade = 2024 - ano;
         lblIdade.setText(Integer.toString(idade));
-        String sit = (idade>=18)?"MAIOR": "MENOR";
+        String sit = (idade <16)? "Nâo pode votar!" : ((idade>=16 && idade<18) || (idade>70))?"O voto é opcional!": "O voto é obrigatório!";
         lblSituacao.setText(sit);
-    }                                      
+    }                                                                      
 
     /**
      * @param args the command line arguments
